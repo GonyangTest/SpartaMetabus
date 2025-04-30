@@ -67,7 +67,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,7 +80,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -93,7 +93,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,7 +106,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,17 +123,16 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Door1
+      name: ClosedDoorTop
       rect:
         serializedVersion: 2
         x: 266
-        y: 0
+        y: 6
         width: 44
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -153,9 +152,8 @@ TextureImporter:
         width: 39
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -167,17 +165,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Door2
+      name: OpendDoodTop
       rect:
         serializedVersion: 2
         x: 330
-        y: 0
+        y: 17
         width: 44
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -197,9 +194,8 @@ TextureImporter:
         width: 54
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 6, y: 0, z: 6, w: 9}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -210,8 +206,49 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ClosedDoorBottom
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 44
+        height: 6
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79de7ece928460e4f8cad2c8414b4e3f
+      internalID: 710510853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpendDoodBottom
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 0
+        width: 44
+        height: 17
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6bbb62e1bc7214d9f1b122eb489fff
+      internalID: -1179099731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
-    customData: 
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
@@ -221,14 +258,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    spriteCustomMetadata:
-      entries: []
     nameFileIdTable:
-      Door1: 452467709
-      Door2: -608264386
+      ClosedDoorBottom: 710510853
+      ClosedDoorTop: 452467709
+      OpendDoodBottom: -1179099731
+      OpendDoodTop: -608264386
       atlas_walls_high-16x32_0: 2077467513
       atlas_walls_high-16x32_1: 1902433866
-      atlas_walls_high-16x32_3: -1179099731
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
