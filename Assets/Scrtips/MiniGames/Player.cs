@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _forwardSpeed;
     [SerializeField] private float _flapForce;
     private Rigidbody2D _rigidbody;
-
+    private bool _isDead = false;
     private bool _isFlap = false;
     void Start()
     {
@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     
     private void Update()
     {
+        if(_isDead) return;
         if(Input.GetMouseButtonDown(0))
         {
             _isFlap = true;
@@ -24,6 +25,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(_isDead) return;
+
         Vector2 velocity = _rigidbody.velocity;
         velocity.x = _forwardSpeed;
         
@@ -38,5 +41,13 @@ public class Player : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
         _rigidbody.velocity = velocity;
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(_isDead) return;
+
+        _isDead = true;
+        FlappyBirdGameManager.Instance.GameOver();
     }
 }
