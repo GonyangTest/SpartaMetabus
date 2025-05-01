@@ -30,8 +30,11 @@ public abstract class InteractableObject : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        _textDisplay.SetActive(true);
-        _isInteractable = true;
+        if(other.gameObject.CompareTag("Player"))   
+        {
+            _textDisplay.SetActive(true);
+            _isInteractable = true;
+        }
     }
 
     public void OnTriggerExit2D(Collider2D other)
