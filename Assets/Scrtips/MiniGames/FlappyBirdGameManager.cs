@@ -22,18 +22,6 @@ public class FlappyBirdGameManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        Debug.Log("Start");
-        Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
-        Vector3 lastPosition = obstacles[0].transform.position;
-
-        foreach(Obstacle obstacle in obstacles)
-        {
-            lastPosition = obstacle.SetRandomPlace(lastPosition);
-        }
-    }
-
     public void GameOver()
     {
         Debug.Log("Game Over");
