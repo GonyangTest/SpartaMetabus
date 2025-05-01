@@ -7,19 +7,39 @@ public class Player : MonoBehaviour
     [SerializeField] private float _forwardSpeed;
     [SerializeField] private float _flapForce;
     private Rigidbody2D _rigidbody;
+    private Animator _animator;
     private bool _isDead = false;
     private bool _isFlap = false;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
     
     private void Update()
     {
-        if(_isDead) return;
-        if(Input.GetMouseButtonDown(0))
+        if(_isDead)
         {
-            _isFlap = true;
+            // 게임 오버 상태에서 Q 키를 누르면 메인 씬으로 돌아가기
+            if(Input.GetKey(KeyCode.Q))
+            {
+                Debug.Log("Q 키 입력 감지: 메인 씬으로 돌아갑니다.");
+                FlappyBirdGameManager.Instance.ReturnMainScene();
+            }
+            // 게임 오버 상태에서 R 키를 누르면 게임 재시작
+            else if(Input.GetKey(KeyManager.Instance.RestartKey))
+            {
+                Debug.Log("R 키 입력 감지: 게임을 재시작합니다.");
+                FlappyBirdGameManager.Instance.Restart();
+            }
+        }
+        else
+        {
+            // 게임 진행 중에 마우스 왼쪽 버튼을 클릭하면 점프
+            if(Input.GetMouseButtonDown(0))
+            {
+                _isFlap = true;
+            }
         }
     }
 
@@ -48,6 +68,8 @@ public class Player : MonoBehaviour
         if(_isDead) return;
 
         _isDead = true;
+
+        _animator.SetTrigger("IsDie");
         FlappyBirdGameManager.Instance.GameOver();
     }
 }

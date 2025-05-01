@@ -5,7 +5,6 @@ using TMPro;
 
 public abstract class InteractableObject : MonoBehaviour
 {
-    [SerializeField] private string _interactionKey = "E";
     [SerializeField] private GameObject _textDisplay;
     [SerializeField] private TextMeshProUGUI _text;
 
@@ -15,13 +14,13 @@ public abstract class InteractableObject : MonoBehaviour
     
     void Start()
     {
-        _textContent = $"{_interactionKey} key to interact";    
+        _textContent = $"{KeyManager.Instance.InteractKey.ToString()}를 눌러 상호작용";    
         _text.text = _textContent;
     }
 
     void Update()
     {
-        if(Input.GetKeyDown("e") && _isInteractable)
+        if(Input.GetKeyDown(KeyManager.Instance.InteractKey) && _isInteractable)
         {
             Interact();
         }

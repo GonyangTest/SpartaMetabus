@@ -1,18 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private static GameManager _instance;
+
+    public static GameManager Instance
     {
-        
+        get
+        {
+            return _instance;
+        }
     }
 
-    // Update is called once per frame
+
+
+    void Awake()
+    {
+        if(_instance == null)
+        {
+            _instance = this;
+        }
+    }
+
+    void Start()
+    {
+        Debug.Log("GameManager Start");
+    }
+
     void Update()
     {
-        
+
     }
+
+    public void FlappyBird()
+    {
+        SceneManager.LoadScene("FlappyStyleMiniGame");
+    }
+
 }
