@@ -70,6 +70,6 @@ public class Player : MonoBehaviour
         _isDead = true;
 
         _animator.SetTrigger("IsDie");
-        FlappyBirdGameManager.Instance.GameOver();
+        FlappyBirdGameManager.Instance.GameEnd();
     }
 }

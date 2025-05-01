@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
 
     [Header("게임 종료")]
     [SerializeField] public GameObject GameOverPanel;
+    [SerializeField] public TextMeshProUGUI GameOverResultText;
     [SerializeField] public TextMeshProUGUI GameOverInteractableText;
     [SerializeField] public TextMeshProUGUI GameOverScoreText;
     [SerializeField] public TextMeshProUGUI GameOverHighScoreText;
@@ -69,8 +70,18 @@ public class UIManager : MonoBehaviour
         GameStartPanel.SetActive(false);
     }
 
-    public void ShowGameOverPanel()
+    public void ShowGameEndPanel(bool isSuccess)
     {
+        if(isSuccess)
+        {
+            GameOverResultText.text = "미션 성공";
+        }
+        else
+        {
+            GameOverResultText.color = Color.red;
+            GameOverResultText.text = "미션 실패";
+        }
+        
         GameOverPanel.SetActive(true);
         GameOverInteractableText.text = $"{KeyManager.Instance.QuitKey.ToString()}를 눌러 나가기\n{KeyManager.Instance.RestartKey.ToString()}를 눌러 다시 시작";
     }

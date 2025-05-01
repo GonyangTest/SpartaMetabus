@@ -7,6 +7,7 @@ public class FlappyBirdGameManager : MonoBehaviour
 {
     private static FlappyBirdGameManager _instance;
 
+    public const float SuccessScore = 30;
     public float Score = 0;
     public float HighScore = 0;
     public static FlappyBirdGameManager Instance
@@ -51,12 +52,20 @@ public class FlappyBirdGameManager : MonoBehaviour
         UIManager.Instance.HideGameStartPanel();
     }
 
-    public void GameOver()
+    public void GameEnd()
     {
         Time.timeScale = 0;
-        Debug.Log("Game Over");
         PlayerPrefs.SetFloat("HighScore", HighScore);
-        UIManager.Instance.ShowGameOverPanel();
+        
+
+        if(Score > 30f)
+        {
+            UIManager.Instance.ShowGameEndPanel(true);
+        }
+        else
+        {
+            UIManager.Instance.ShowGameEndPanel(false);
+        }
     }
 
     public void Restart()
