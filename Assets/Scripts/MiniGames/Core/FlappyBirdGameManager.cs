@@ -24,11 +24,6 @@ public class FlappyBirdGameManager : MonoBehaviour
         if(_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
         }
 
         HighScore = PlayerPrefs.GetFloat(Constant.MiniGames.FlappyBird.HIGH_SCORE_KEY);
@@ -64,6 +59,7 @@ public class FlappyBirdGameManager : MonoBehaviour
         if(Score > Constant.MiniGames.FlappyBird.SUCCESS_SCORE)
         {
             ChangeGameState(GameState.Success);
+            GoldManager.Instance.AddGold(100);
         }
         else
         {
@@ -73,8 +69,10 @@ public class FlappyBirdGameManager : MonoBehaviour
 
     public void Restart()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 0;
+        Score = 0;
         SceneManager.LoadScene(Constant.MiniGames.FlappyBird.SCENE_NAME);
+        ChangeGameState(GameState.Ready);
     }
 
     public void ReturnMainScene()

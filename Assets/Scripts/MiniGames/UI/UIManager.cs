@@ -50,13 +50,21 @@ public class UIManager : MonoBehaviour
     {
         highScore = FlappyBirdGameManager.Instance.HighScore;
         FlappyBirdGameManager.Instance.OnChangeGameState += HandleGameState;
-    }   
+    } 
+
+    public void Initialize()
+    {
+        highScore = FlappyBirdGameManager.Instance.HighScore;
+        FlappyBirdGameManager.Instance.OnChangeGameState += HandleGameState;
+        HandleGameState(GameState.Ready);
+    }
 
     private void HandleGameState(GameState gameState)
     {
         switch(gameState)
         {
             case GameState.Ready:
+                HideGameEndPanel();
                 ShowGameStartPanel();
                 UpdateHighScoreText(highScore);
                 break;
@@ -100,6 +108,11 @@ public class UIManager : MonoBehaviour
         
         GameOverPanel.SetActive(true);
         GameOverInteractableText.text = $"{KeyManager.Instance.QuitKey.ToString()}를 눌러 나가기\n{KeyManager.Instance.RestartKey.ToString()}를 눌러 다시 시작";
+    }
+
+    public void HideGameEndPanel()
+    {
+        GameOverPanel.SetActive(false);
     }
 
     public void SetScoreText(float score)
