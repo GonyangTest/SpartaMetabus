@@ -24,12 +24,16 @@ Assets/
 │   └── Constant/              # 공통 상수 정의
 ├── Sounds/                    # 효과음(SFX), 배경음악(BGM)
 └── Sprites/                   # 2D 스프라이트 리소스
-
 ```
 ## 주요 기능
+
 **플레이어 컨트롤:** PlayerController를 통한 이동, 상호작용 등
+
 **상점 시스템:** ShopManager, ShopItemUI 등으로 구현된 아이템 구매/판매
+
 **아이템/무기 시스템:** ScriptableObject(Weapon, ItemData) 기반 데이터 관리
+
 **상호작용 오브젝트:** 문, NPC, 미니게임 스테이션 등 다양한 상호작용 요소
+
 **미니게임:** FlappyBird 등 별도 미니게임 구현
 
