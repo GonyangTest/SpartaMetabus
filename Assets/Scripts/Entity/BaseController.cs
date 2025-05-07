@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseController : MonoBehaviour
@@ -13,15 +11,11 @@ public class BaseController : MonoBehaviour
     public Vector2 MovementDirection {get {return _movementDirection;}}
     public Vector2 LookDirection {get {return _lookDirection;}}
 
-    public float Speed = 5f;
+    [SerializeField] private float _speed = 5f;
 
     protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-    }
-
-    protected virtual void Start()
-    {
     }
 
     protected virtual void Update()
@@ -41,7 +35,7 @@ public class BaseController : MonoBehaviour
 
     private void Movement(Vector2 direction)
     {
-        direction = direction * Speed;
+        direction = direction * _speed;
         _rigidbody.velocity = direction;
     }   
 

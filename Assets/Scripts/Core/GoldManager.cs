@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using System;
 
 public class GoldManager : MonoBehaviour
 {
@@ -16,7 +14,7 @@ public class GoldManager : MonoBehaviour
     }
 
     private int _currentGold = 0;
-    [SerializeField] private TextMeshProUGUI _goldText;
+    public event Action<int> OnChangeGold;
 
     private void Awake()
     {
@@ -45,5 +43,7 @@ public class GoldManager : MonoBehaviour
         }
 
         PlayerPrefs.SetInt("PlayerGold", _currentGold);
+
+        OnChangeGold?.Invoke(_currentGold);
     }
 }

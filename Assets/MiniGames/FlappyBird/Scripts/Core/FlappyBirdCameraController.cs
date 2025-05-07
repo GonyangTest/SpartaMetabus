@@ -6,7 +6,7 @@ public class FlappyBirdCameraController : MonoBehaviour
 {
     [SerializeField] private GameObject _target;
     private float _offsetX;
-    void Start()
+    private void Start()
     {
         if(_target == null)
         {
@@ -18,7 +18,7 @@ public class FlappyBirdCameraController : MonoBehaviour
         _offsetX = transform.position.x - _target.transform.position.x;    
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         if(_target == null)
         {

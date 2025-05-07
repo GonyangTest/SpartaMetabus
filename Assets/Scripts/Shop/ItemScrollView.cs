@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 
 public class ItemScrollView : MonoBehaviour
@@ -22,7 +21,7 @@ public class ItemScrollView : MonoBehaviour
     private void Update()
     {
         // 마우스 휠로 스크롤 처리
-        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        float scrollInput = Mouse.current.scroll.ReadValue().y;
         if (scrollInput != 0 && _scrollRect != null)
         {
             Vector2 scrollPosition = _scrollRect.normalizedPosition;

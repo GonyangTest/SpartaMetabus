@@ -1,12 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopNPC : InteractableObject
+public class ShopNPC : MonoBehaviour, IInteractableObject
 {
     public List<ItemData> shopItems;
 
-    public override void Interact()
+    public void Interact()
     {
         ShopManager.Instance.OpenShop(shopItems);
     }

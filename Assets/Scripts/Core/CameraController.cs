@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -7,7 +5,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private GameObject _target;
     private float _offsetX;
     private float _offsetY;
-    void Start()
+    private void Start()
     {
         if(_target == null)
         {
