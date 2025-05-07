@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
@@ -14,9 +12,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-
-    void Awake()
+    private void Awake()
     {
         if(_instance == null)
         {
@@ -29,19 +25,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        Debug.Log("GameManager Start");
-    }
-
-    void Update()
-    {
-
-    }
-
     public void FlappyBird()
     {
         SceneManager.LoadScene(Constant.MiniGames.FlappyBird.SCENE_NAME);
     }
-
 }

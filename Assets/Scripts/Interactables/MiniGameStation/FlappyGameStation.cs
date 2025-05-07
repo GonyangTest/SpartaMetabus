@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class FlappyGameStation : InteractableObject
+public class FlappyGameStation : MonoBehaviour, IInteractableObject
 {
-    public override void Interact()
+    public void Interact()
     {
         GameManager.Instance.FlappyBird();
     }

@@ -1,24 +1,30 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System.Linq;
 
 public class PlayerController : BaseController
 {
     private Camera _camera;
+    private List<IInteractableObject> _interactablesInRange = new List<IInteractableObject>();
 
-    protected override void Start()
+    private IInteractableObject _interactable;
+    [SerializeField] private GameObject _interactText;
+
+    protected void Start()
     {
-        base.Start();
         _camera = Camera.main;
     }
-
-    protected override void HandleAction()
+    public void OnMove(InputValue inputValue)
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        _movementDirection = new Vector2(horizontal, vertical).normalized;
+        Debug.Log("OnMove: " + inputValue.Get<Vector2>());
+        _movementDirection = inputValue.Get<Vector2>();
+        _movementDirection = _movementDirection.normalized;
+    }
 
-        Vector2 mousePosition = Input.mousePosition;
+    public void OnLook(InputValue inputValue)
+    {
+        Vector2 mousePosition = inputValue.Get<Vector2>();
         Vector2 worldPosition = _camera.ScreenToWorldPoint(mousePosition);
         _lookDirection = worldPosition - (Vector2)transform.position;
 
@@ -30,5 +36,51 @@ public class PlayerController : BaseController
         {
             _lookDirection = _lookDirection.normalized;
         }
+    }
+
+    public void OnInteract(InputValue inputValue)
+    {
+        if(inputValue.isPressed && _interactable != null)
+        {
+            UpdateClosestInteractable();
+            _interactable.Interact();
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag(Constant.INTERACTABLE_TAG))   
+        {
+            _interactText.SetActive(true);
+            _interactable = other.gameObject.GetComponent<IInteractableObject>();
+            _interactablesInRange.Add(_interactable);
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag(Constant.INTERACTABLE_TAG))
+        {
+            _interactable = other.gameObject.GetComponent<IInteractableObject>();
+            _interactablesInRange.Remove(_interactable);
+            Debug.Log("interactablesInRange: " + _interactablesInRange.Count);
+            if(_interactablesInRange.Count == 0)
+            {
+                _interactText.SetActive(false);
+            }
+        }
+    }
+
+    private void UpdateClosestInteractable()
+    {
+        if (_interactablesInRange.Count == 0)
+        {
+            _interactable = null;
+            return;
+        }
+
+        _interactable = _interactablesInRange
+            .OrderBy(i => Vector2.Distance(transform.position, ((MonoBehaviour)i).transform.position))
+            .FirstOrDefault();
     }
 }
