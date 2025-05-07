@@ -8,38 +8,20 @@ using TMPro;
 public class ShopUI : MonoBehaviour
 {
     [SerializeField] private ItemScrollView _itemScrollView;
-    [SerializeField] private Button _buyButton;
-    [SerializeField] private Button _closeButton;
-    [SerializeField] private List<ItemData> _items;
-    
-    public event Action OnItemClicked;
+    private List<ItemData> _items;
 
-    private void Awake()
+    private void UpdateItemList()
     {
-        if (_buyButton != null)
-        {
-            _buyButton.onClick.AddListener(OnBuyButtonClicked);
-        }
-    }
-
-    private void Start()
-    {
+        _items = ShopManager.Instance.GetShopItems();
+        _itemScrollView.ClearItems();
         foreach (var item in _items)
         {
             _itemScrollView.AddItem(item);
         }
     }
 
-    private void OnBuyButtonClicked()
+    private void OnEnable()
     {
-        OnItemClicked?.Invoke();
-    }
-
-    private void OnDestroy()
-    {
-        if (_buyButton != null)
-        {
-            _buyButton.onClick.RemoveListener(OnBuyButtonClicked);
-        }
+        UpdateItemList();
     }
 } 

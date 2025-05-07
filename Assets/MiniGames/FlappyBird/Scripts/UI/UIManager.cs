@@ -29,11 +29,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI GameHelpTitleText;
     [SerializeField] public TextMeshProUGUI GameHelpDescriptionText;
     public const string TITLE = "게임 설명";
-    public const string DESCRIPTION = @"점프: 마우스 왼쪽 버튼을 클릭하여 비행기를 날게 합니다
-
+    public const string DESCRIPTION = @"조작: 마우스 왼쪽 버튼을 클릭하면 비행기가 위로 쭉 올라가고, 다시 클릭하면 아래로 쭉 내려갑니다
 장애물: 바위 사이를 통과하여 점수를 얻으세요
-
-목표: 최대한 오래 살아남아 높은 점수를 획득하세요";
+목표: 30초 이상 생존하세요. 성공 시 100골드를 획득합니다!";
 
     [Header("게임 종료")]
     [SerializeField] public GameObject GameOverPanel;

@@ -9,6 +9,7 @@ public static class Constant
 
     public const string PLAYER_TAG = "Player";
     public const string BACKGROUND_TAG = "Background";
+
     public static class MiniGames
     {
         public static class FlappyBird

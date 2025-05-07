@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        MainUIManager.Instance.UpdateMainUIPanel();
     }   
 
     public void FlappyBird()
