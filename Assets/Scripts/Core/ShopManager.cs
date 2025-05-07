@@ -1,8 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
@@ -17,7 +14,7 @@ public class ShopManager : MonoBehaviour
     }
 
     private List<ItemData> _shopItems;
-    [SerializeField] private GameObject shopPanel;
+    [SerializeField] private GameObject _shopPanel;
 
     private ItemData _itemData;
 
@@ -32,9 +29,9 @@ public class ShopManager : MonoBehaviour
     private void Start()
     {
         // 시작시 상점 패널 비활성화
-        if (shopPanel != null)
+        if (_shopPanel != null)
         {
-            shopPanel.SetActive(false);
+            _shopPanel.SetActive(false);
         }
     }
 
@@ -44,7 +41,7 @@ public class ShopManager : MonoBehaviour
         _shopItems = shopItems;
         _itemData = null;
 
-        if (shopPanel != null)
+        if (_shopPanel != null)
         {
             MainUIManager.Instance.OpenShopPanel();
         }
@@ -55,7 +52,7 @@ public class ShopManager : MonoBehaviour
     {
         _itemData = null;
 
-        if (shopPanel != null)
+        if (_shopPanel != null)
         {
             MainUIManager.Instance.CloseShopPanel();
         }

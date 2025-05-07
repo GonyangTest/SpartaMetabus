@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
@@ -14,7 +12,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Awake()
+    private void Awake()
     {
         if(_instance == null)
         {
@@ -26,16 +24,6 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject); // 이미 인스턴스가 존재하면 파괴
         }
     }
-
-    void Start()
-    {
-        Debug.Log("GameManager Start");
-    }
-
-    void Update()
-    {
-        MainUIManager.Instance.UpdateMainUIPanel();
-    }   
 
     public void FlappyBird()
     {

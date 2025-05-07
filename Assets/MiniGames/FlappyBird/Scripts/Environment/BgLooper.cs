@@ -7,7 +7,7 @@ public class BgLooper : MonoBehaviour
     [SerializeField] private int _bgCount = 5;
 
     private Vector3 _lastPosition;
-    void Start()
+    private void Start()
     {
         Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
         _lastPosition = obstacles[0].transform.position;

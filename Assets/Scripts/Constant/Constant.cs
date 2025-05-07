@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public static class Constant
 {
     public const string MAIN_SCENE_NAME = "SampleScene";
@@ -9,6 +5,7 @@ public static class Constant
 
     public const string PLAYER_TAG = "Player";
     public const string BACKGROUND_TAG = "Background";
+    public const string INTERACTABLE_TAG = "Interactable";
 
     public static class MiniGames
     {

@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 
 public class MainUIManager : MonoBehaviour
@@ -25,51 +22,44 @@ public class MainUIManager : MonoBehaviour
     }
 
     [Header("UI")]
-    [SerializeField] public GameObject InventoryPanel;
-    [SerializeField] public GameObject ShopPanel;
-    [SerializeField] public GameObject NPCCommunicationPanel;
-    [SerializeField] public GameObject MainUIPanel;
-    [SerializeField] public TextMeshProUGUI GoldText;
-
-    private float highScore;
+    [SerializeField] private GameObject _inventoryPanel;
+    [SerializeField] private GameObject _shopPanel;
+    [SerializeField] private GameObject _npcCommunicationPanel;
+    [SerializeField] private GameObject _mainUIPanel;
+    [SerializeField] private TextMeshProUGUI _goldText;
 
     private void Start()
     {
+        GoldManager.Instance.OnChangeGold += UpdateGoldText;
+        UpdateGoldText(GoldManager.Instance.GetGold());
     }
 
-    public void Update()
-    {
-        int gold = GoldManager.Instance.GetGold();
-        GoldText.text = gold.ToString();
-    }
-
+    // 인벤토리 패널 표시 (추후 구현)
     public void ShowInventoryPanel()
     {
     }
 
+    // NPC 대화 패널 표시 (추후 구현)
     public void ShowNPCCommunicationPanel()
     {
     }
 
-    public void UpdateMainUIPanel()
-    {
-        UpdateGoldText();
-    }
-
+    // 상점 패널 표시
     public void OpenShopPanel()
     {
-        ShopPanel.SetActive(true);
+        _shopPanel.SetActive(true);
     }
 
+    // 상점 패널 닫기
     public void CloseShopPanel()
     {
-        ShopPanel.SetActive(false);
+        _shopPanel.SetActive(false);
     }
     
-    public void UpdateGoldText()
+    // 골드 텍스트 업데이트
+    public void UpdateGoldText(int gold)
     {
-        int gold = GoldManager.Instance.GetGold();
-        GoldText.text = gold.ToString();
+        _goldText.text = gold.ToString();
     }
 
 }
