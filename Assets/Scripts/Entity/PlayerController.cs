@@ -9,7 +9,7 @@ public class PlayerController : BaseController
     private List<IInteractableObject> _interactablesInRange = new List<IInteractableObject>();
 
     private IInteractableObject _interactable;
-    private GameObject _interactText;
+    [SerializeField] private GameObject _interactText;
 
     protected void Start()
     {

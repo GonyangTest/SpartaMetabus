@@ -10247,8 +10247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 1438807134}
-  Speed: 5
-  _isInteracting: 0
+  _speed: 5
   _interactText: {fileID: 1860334364}
 --- !u!114 &1877371360
 MonoBehaviour:
