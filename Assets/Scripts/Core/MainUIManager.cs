@@ -43,15 +43,7 @@ public class MainUIManager : MonoBehaviour
         GoldText.text = gold.ToString();
     }
 
-    private void HandleGameState(GameState gameState)
-    {
-    }
-
     public void ShowInventoryPanel()
-    {
-    }
-
-    public void HideShopPanel()
     {
     }
 
@@ -61,6 +53,23 @@ public class MainUIManager : MonoBehaviour
 
     public void UpdateMainUIPanel()
     {
-        
+        UpdateGoldText();
     }
+
+    public void OpenShopPanel()
+    {
+        ShopPanel.SetActive(true);
+    }
+
+    public void CloseShopPanel()
+    {
+        ShopPanel.SetActive(false);
+    }
+    
+    public void UpdateGoldText()
+    {
+        int gold = GoldManager.Instance.GetGold();
+        GoldText.text = gold.ToString();
+    }
+
 }

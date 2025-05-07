@@ -38,4 +38,12 @@ public class ItemScrollView : MonoBehaviour
         ItemDisplay itemDisplayScript = itemDisplay.GetComponent<ItemDisplay>();
         itemDisplayScript.SetupItem(itemData);
     }
+
+    public void ClearItems()
+    {
+        foreach (Transform child in _contentPanel)
+        {
+            Destroy(child.gameObject);
+        }
+    }
 }

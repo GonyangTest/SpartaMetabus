@@ -16,7 +16,7 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    [SerializeField] private List<ItemData> shopItems = new List<ItemData>();
+    private List<ItemData> _shopItems;
     [SerializeField] private GameObject shopPanel;
 
     private ItemData _itemData;
@@ -39,13 +39,14 @@ public class ShopManager : MonoBehaviour
     }
 
     // 상점 패널 열기
-    public void OpenShop()
+    public void OpenShop(List<ItemData> shopItems)
     {
+        _shopItems = shopItems;
         _itemData = null;
 
         if (shopPanel != null)
         {
-            shopPanel.SetActive(true);
+            MainUIManager.Instance.OpenShopPanel();
         }
     }
 
@@ -53,17 +54,17 @@ public class ShopManager : MonoBehaviour
     public void CloseShop()
     {
         _itemData = null;
-        
+
         if (shopPanel != null)
         {
-            shopPanel.SetActive(false);
+            MainUIManager.Instance.CloseShopPanel();
         }
     }
 
     // 아이템 목록 표시
     public List<ItemData> GetShopItems()
     {
-        return shopItems;
+        return _shopItems;
     }
 
     public void SetItemData(ItemData itemData)

@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
             // 게임 진행 중에 마우스 왼쪽 버튼을 클릭하면 점프
             if(Input.GetMouseButtonDown(0))
             {
-                _isFlap = true;
+                _isFlap = !_isFlap;
             }
         }
     }
@@ -53,7 +53,11 @@ public class Player : MonoBehaviour
         if(_isFlap)
         {
             velocity.y = _flapForce;
-            _isFlap = false;
+            // _isFlap = false;
+        }
+        else
+        {
+            velocity.y = -_flapForce;
         }
 
         // 회전

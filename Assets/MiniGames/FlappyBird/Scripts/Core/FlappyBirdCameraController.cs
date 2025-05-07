@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class FlappyBirdCameraController : MonoBehaviour
 {
     [SerializeField] private GameObject _target;
     private float _offsetX;
-    private float _offsetY;
     void Start()
     {
         if(_target == null)
@@ -17,7 +16,6 @@ public class CameraController : MonoBehaviour
         }
 
         _offsetX = transform.position.x - _target.transform.position.x;    
-        _offsetY = transform.position.y - _target.transform.position.y;    
     }
 
     void LateUpdate()
@@ -31,7 +29,6 @@ public class CameraController : MonoBehaviour
 
         Vector3 pos = transform.position;
         pos.x = _target.transform.position.x + _offsetX;
-        pos.y = _target.transform.position.y + _offsetY;
         transform.position = pos;
     }
 }
