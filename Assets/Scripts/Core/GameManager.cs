@@ -14,8 +14,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-
     void Awake()
     {
         if(_instance == null)
@@ -36,12 +34,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
-    }
+    }   
 
     public void FlappyBird()
     {
         SceneManager.LoadScene(Constant.MiniGames.FlappyBird.SCENE_NAME);
     }
-
 }
