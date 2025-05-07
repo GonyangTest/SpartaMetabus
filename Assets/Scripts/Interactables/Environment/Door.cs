@@ -13,13 +13,13 @@ public class Door : InteractableObject
     {
         if(_isOpen)
         {
-            _openDoor.SetActive(true);
-            _closeDoor.SetActive(false);
+            _openDoor.SetActive(false);
+            _closeDoor.SetActive(true);
         }
         else
         {
-            _openDoor.SetActive(false);
-            _closeDoor.SetActive(true);
+            _openDoor.SetActive(true);
+            _closeDoor.SetActive(false);
         }
         _isOpen = !_isOpen;
     }
