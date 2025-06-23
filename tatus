@@ -1,0 +1,181 @@
+[33mcommit 799f0f6bd0c5161831100cb5919efc76a7e841ac[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m)[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed May 7 15:59:32 2025 +0900
+
+    docs : README.md 추가
+
+[33mcommit bd42a8187cbbc6fdbbf832c2a653876c117bb80b[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed May 7 15:44:31 2025 +0900
+
+    fix : 리펙토링 후 상호작용 안되는 현상 수정
+
+[33mcommit abbaa31f46e22a49760692cb9680464db91f7c54[m
+Merge: 8c4e73d 2c9ce3e
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed May 7 15:37:20 2025 +0900
+
+    Merge pull request #22 from GonyangTest/dhpark/refactor/refactoring
+    
+    refactor : 코드 정리 및 상호작용 기능 개선
+
+[33mcommit 2c9ce3e2a7c45f22fac52e9e9fc34ba59e4f077f[m[33m ([m[1;31morigin/dhpark/refactor/refactoring[m[33m, [m[1;32mdhpark/refactor/refactoring[m[33m)[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed May 7 15:36:26 2025 +0900
+
+    refactor : 코드 정리 및 상호작용 기능 개선
+    - 카메라 및 게임 매니저의 접근 제어자 변경 (private)
+    - 상호작용 가능한 태그 추가 및 관련 코드 수정
+    - 상점 및 NPC 상호작용 기능 개선
+    - 불필요한 코드 제거 및 리팩토링
+
+[33mcommit 8c4e73df244b01514abbeef7ce4e175aeb0556fd[m
+Merge: 0590629 93eb97d
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed May 7 11:33:59 2025 +0900
+
+    Merge pull request #21 from GonyangTest/dhpark/refactor/shop
+    
+     refactor : 상점 시스템 개선 및 UI 업데이트
+
+[33mcommit 93eb97dcbc95369668fb5eb36f1f04a33910ecdc[m[33m ([m[1;31morigin/dhpark/refactor/shop[m[33m, [m[1;32mdhpark/refactor/shop[m[33m)[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed May 7 11:33:14 2025 +0900
+
+     refactor : 상점 시스템 개선 및 UI 업데이트
+    - NPC에 따른 상점 아이템 목록 업데이트 구현
+    - UI 요소 및 스크립트 리팩토링
+    - 플레이어 태그 및 카메라 위치 조정
+
+[33mcommit 05906290e21a443291bdb8e665b1b44d4259e179[m
+Merge: 881652a e0d82c0
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed May 7 10:34:09 2025 +0900
+
+    Merge pull request #19 from GonyangTest/dhpark/fix/door_bug
+    
+    fix : 문 열기/닫기 상태 전환 관련 버그 수정 #16
+
+[33mcommit e0d82c0cef2c96b265577360c3906b952dcd402a[m[33m ([m[1;31morigin/dhpark/fix/door_bug[m[33m, [m[1;32mdhpark/fix/door_bug[m[33m)[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed May 7 10:33:39 2025 +0900
+
+    fix : 문 열기/닫기 상태 전환 관련 버그 수정 #16
+
+[33mcommit 881652a9aeed1d1e181d322ae892749c3ae21b34[m
+Merge: 769d507 1df36d8
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed May 7 10:32:08 2025 +0900
+
+    Merge pull request #18 from GonyangTest/dhpark/feat/shop
+    
+    Dhpark/feat/shop
+
+[33mcommit 1df36d8e0aba9ef1ad7ed1f99b4eef0f7e1253f0[m[33m ([m[1;31morigin/dhpark/feat/shop[m[33m, [m[1;32mdhpark/feat/shop[m[33m)[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed May 7 10:31:20 2025 +0900
+
+    feat : 상점 시스템 구현 #17
+    - 상점 매니저 및 UI 추가
+    - 아이템 데이터 관리 및 표시 기능 구현
+    - 아이템 구매 기능 구현
+    - NPC와의 상호작용을 통한 상점 열기 기능 추가
+
+[33mcommit 3c5a830c374636fbfe79492d43d0321a58a5a7b5[m[33m ([m[1;31morigin/temp[m[33m, [m[1;32mtemp[m[33m)[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Fri May 2 21:30:32 2025 +0900
+
+    WIP : 도전 기능 적용 중
+
+[33mcommit 769d507a58056d474e03c2633379019de290e1e6[m[33m ([m[1;33mtag: [m[1;33mv0.0.1[m[33m, [m[1;32mmain[m[33m)[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Fri May 2 17:19:27 2025 +0900
+
+    refactor : 폴더 구조 및 코드 리펙토링
+    - 폴더 구조변경
+    - 상수 관리 추가
+    - 미니 게임 상태 변수 추가
+
+[33mcommit fe9fa11074475828699636a0f9d94495bf37127b[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Thu May 1 19:46:04 2025 +0900
+
+    fix : 결과 화면 성공/실패 구분 #6
+
+[33mcommit 706b65e2e442845927a457aefd1caacb8edafa46[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Thu May 1 19:28:45 2025 +0900
+
+    git chore : 맵 장식 추가
+
+[33mcommit 189d5f4351c1c0d818802f0d9c6655c395fcfd26[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Thu May 1 17:54:44 2025 +0900
+
+    feat : npc 기본 배치
+
+[33mcommit 59898d1587d9b5b9cf255c63f48a0b3a6dc43607[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Thu May 1 17:23:40 2025 +0900
+
+    WIP : 미니게임 구현
+    - key 관리 클래스 추가 #10
+    - 미니게임 상호작용 기능 추가 #3
+    - 미니게임 점수 시스템 구현 #7
+    - 씬 전환 시스템 구현 #8 (WIP)
+    - UI 시스템 구현 #6 (WIP)
+    - 플레이어 애니메이션 생성 #5
+
+[33mcommit 409201fc91528f7670bf80985c6d8ec6f6802ea1[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Thu May 1 11:40:18 2025 +0900
+
+    미니게임 배경 및 장애물 반복 생성 추가
+
+[33mcommit d28e800685b1a6f405d433188b9933fcbc48d085[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Thu May 1 10:54:30 2025 +0900
+
+    feat : 플레이어 충돌 처리, 장애물 기본 배치
+
+[33mcommit 21dd96c56acdf9cf3e28e5fc9dcdfce80ee33056[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Thu May 1 10:06:05 2025 +0900
+
+    feat : 미니게임의 플레이어 이동, 카메라 추적 기능 추가 #5
+
+[33mcommit b32f2adf0fefd2fc3a4c9c98c2872357873859b7[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Thu May 1 09:47:03 2025 +0900
+
+    feat : flappy bird의 미니 게임 UI 준비
+
+[33mcommit f3f91610cc7a735c6f0ba70bc8110c1e9f6c3eb5[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed Apr 30 23:13:17 2025 +0900
+
+    fix : 벽, 문 렌더링 이슈 관련 수정
+
+[33mcommit 03500a199c7beb9c455b20b784228c83f0aa2b21[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed Apr 30 22:13:05 2025 +0900
+
+    feat : 카메라 플레이어 추적이동,  상호작용 가능한 문 구현
+
+[33mcommit a51358b34196590c32c4a911019c6852a291ba87[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed Apr 30 21:21:13 2025 +0900
+
+    first commit
+
+[33mcommit 8cc0ea514aef79892d14c0ef037b54cc96f6dc7e[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed Apr 30 20:15:19 2025 +0900
+
+    chore : 유니티 버전 변경
+
+[33mcommit 0964b31dfa8d704f22d9eb2903f08abcc81ccfee[m
+Author: GonyangTest <112749400+GonyangTest@users.noreply.github.com>
+Date:   Wed Apr 30 11:51:52 2025 +0900
+
+    first commit

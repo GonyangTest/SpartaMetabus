@@ -17,11 +17,11 @@ public class GameManager : MonoBehaviour
         if(_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject); // ì¸ìŠ¤í„´ìŠ¤ê°€ ì¡´ì¬í•˜ì§€ ì•Šìœ¼ë©´ íŒŒê´´ë˜ì§€ ì•ŠìŒ
+            DontDestroyOnLoad(this.gameObject); // ?¸?Š¤?„´?Š¤ê°? ì¡´ì¬?•˜ì§? ?•Š?œ¼ë©? ?ŒŒê´´ë˜ì§? ?•Š?Œ
         }
         else
         {
-            Destroy(this.gameObject); // ì´ë¯¸ ì¸ìŠ¤í„´ìŠ¤ê°€ ì¡´ì¬í•˜ë©´ íŒŒê´´
+            Destroy(this.gameObject); // ?´ë¯? ?¸?Š¤?„´?Š¤ê°? ì¡´ì¬?•˜ë©? ?ŒŒê´?
         }
     }
 
